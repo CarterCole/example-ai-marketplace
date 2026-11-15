@@ -7,7 +7,7 @@ This marketplace doesn't ship Gemini extensions; Gemini users install individual
 ## Install skills from this repo
 
 ```bash
-gemini skills install https://github.com/CarterCole/cartertech-ai-marketplace --path plugins/commit-craft/skills/conventional-commits
+gemini skills install https://github.com/CarterCole/example-ai-marketplace --path plugins/commit-craft/skills/conventional-commits
 ```
 
 `--scope workspace` installs into the project instead of the user folder. `gemini skills link <path>` links a local checkout so edits show up immediately.

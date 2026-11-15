@@ -4,7 +4,7 @@ Cursor's plugin and marketplace manifests have the same shape as Claude Code's, 
 
 ## Install from this repo
 
-- **CLI:** `/plugin marketplace add https://github.com/CarterCole/cartertech-ai-marketplace`, or `agent plugin marketplace add <git-url> [--git-ref <ref>]` (with `list`, `update`, `remove`).
+- **CLI:** `/plugin marketplace add https://github.com/CarterCole/example-ai-marketplace`, or `agent plugin marketplace add <git-url> [--git-ref <ref>]` (with `list`, `update`, `remove`).
 - **App:** Customize, then Install, then pick user or project scope.
 - **Teams and Enterprise:** Dashboard, then Plugins & MCPs, then Import from Repo.
 - **Local development:** put the plugin in `~/.cursor/plugins/local/<name>` and run **Reload Window**. Symlinks pointing outside that folder are skipped.

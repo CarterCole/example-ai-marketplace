@@ -5,8 +5,8 @@ The source-of-truth format for this repo. Sources: [plugins reference](https://c
 ## Install from this repo
 
 ```
-/plugin marketplace add CarterCole/cartertech-ai-marketplace
-/plugin install commit-craft@cartertech
+/plugin marketplace add CarterCole/example-ai-marketplace
+/plugin install commit-craft@example-ai-marketplace
 ```
 
 Or `claude plugin marketplace add …` and `claude plugin install … [-s user|project|local]` from a shell. `--scope project` writes the plugin into `.claude/settings.json` for the whole team.

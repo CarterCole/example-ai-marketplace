@@ -1,11 +1,11 @@
 {
-  "name": "cartertech",
+  "name": "example-ai-marketplace",
   "owner": {
     "name": "Carter Cole",
     "email": "carter@cartercole.com"
   },
   "metadata": {
-    "description": "CarterTech plugins for Claude Code, GitHub Copilot, Codex, Cursor and Gemini CLI",
+    "description": "Example plugins for Claude Code, GitHub Copilot, Codex, Cursor and Gemini CLI",
     "version": "0.1.0"
   },
   "plugins": [

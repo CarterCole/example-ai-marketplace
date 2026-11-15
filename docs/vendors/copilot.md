@@ -11,11 +11,11 @@ Checked 2026-11-14; CLI behavior tested with Copilot CLI 1.0.18.
 Copilot CLI:
 
 ```bash
-copilot plugin marketplace add CarterCole/cartertech-ai-marketplace
+copilot plugin marketplace add CarterCole/example-ai-marketplace
 ```
 
 ```bash
-copilot plugin install commit-craft@cartertech
+copilot plugin install commit-craft@example-ai-marketplace
 ```
 
 Other sources: `copilot plugin install owner/repo`, `owner/repo:path/to/plugin`, a git URL or `./path`. `github/copilot-plugins` and `github/awesome-copilot` are built in.
@@ -27,7 +27,7 @@ VS Code: plugins are off by default. In user settings:
 "chat.plugins.marketplaces": [
   "github/copilot-plugins",
   "github/awesome-copilot",
-  "CarterCole/cartertech-ai-marketplace"
+  "CarterCole/example-ai-marketplace"
 ]
 ```
 

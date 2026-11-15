@@ -6,8 +6,8 @@
     "name": "Carter Cole",
     "email": "carter@cartercole.com"
   },
-  "homepage": "https://github.com/CarterCole/cartertech-ai-marketplace/tree/main/plugins/commit-craft",
-  "repository": "https://github.com/CarterCole/cartertech-ai-marketplace",
+  "homepage": "https://github.com/CarterCole/example-ai-marketplace/tree/main/plugins/commit-craft",
+  "repository": "https://github.com/CarterCole/example-ai-marketplace",
   "license": "MIT",
   "keywords": [
     "git",

@@ -5,14 +5,14 @@ Codex reads Claude Code marketplaces and manifests as a fallback. Sources: [buil
 ## Install from this repo
 
 ```bash
-codex plugin marketplace add CarterCole/cartertech-ai-marketplace
+codex plugin marketplace add CarterCole/example-ai-marketplace
 ```
 
 ```bash
-codex plugin add commit-craft@cartertech
+codex plugin add commit-craft@example-ai-marketplace
 ```
 
-`marketplace add` also takes `--ref`, `--sparse PATH`, `owner/repo@ref`, git URLs and local folders. In the terminal UI, `/plugins` opens the browser. To turn a plugin on for one repo, add `[plugins."commit-craft@cartertech"] enabled = true` to `.codex/config.toml`. The IDE extension doesn't support plugins.
+`marketplace add` also takes `--ref`, `--sparse PATH`, `owner/repo@ref`, git URLs and local folders. In the terminal UI, `/plugins` opens the browser. To turn a plugin on for one repo, add `[plugins."commit-craft@example-ai-marketplace"] enabled = true` to `.codex/config.toml`. The IDE extension doesn't support plugins.
 
 ## Lookup order
 

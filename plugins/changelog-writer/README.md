@@ -12,11 +12,11 @@ cp -R plugins/changelog-writer plugins/my-plugin
 
 | Tool | Command |
 |------|---------|
-| Claude Code | `/plugin install changelog-writer@cartertech` |
-| Copilot CLI | `copilot plugin install changelog-writer@cartertech` |
-| Codex | `codex plugin add changelog-writer@cartertech` |
+| Claude Code | `/plugin install changelog-writer@example-ai-marketplace` |
+| Copilot CLI | `copilot plugin install changelog-writer@example-ai-marketplace` |
+| Codex | `codex plugin add changelog-writer@example-ai-marketplace` |
 | Cursor, VS Code | install from the marketplace browser |
-| Gemini CLI | `gemini skills install https://github.com/CarterCole/cartertech-ai-marketplace --path plugins/changelog-writer/skills/changelog-writer` |
+| Gemini CLI | `gemini skills install https://github.com/CarterCole/example-ai-marketplace --path plugins/changelog-writer/skills/changelog-writer` |
 
 ## What's inside
 

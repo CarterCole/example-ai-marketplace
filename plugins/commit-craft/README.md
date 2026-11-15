@@ -6,9 +6,9 @@ Conventional Commits for every agent: a skill that writes the message, a `/commi
 
 | Tool | Command |
 |------|---------|
-| Claude Code | `/plugin install commit-craft@cartertech` |
-| Copilot CLI | `copilot plugin install commit-craft@cartertech` |
-| Codex | `codex plugin add commit-craft@cartertech` |
+| Claude Code | `/plugin install commit-craft@example-ai-marketplace` |
+| Copilot CLI | `copilot plugin install commit-craft@example-ai-marketplace` |
+| Codex | `codex plugin add commit-craft@example-ai-marketplace` |
 | Cursor, VS Code | install from the marketplace browser |
 
 Add the marketplace first; see the [repo README](../../README.md#install).

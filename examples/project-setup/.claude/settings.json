@@ -1,14 +1,14 @@
 {
   "extraKnownMarketplaces": {
-    "cartertech": {
+    "example-ai-marketplace": {
       "source": {
         "source": "github",
-        "repo": "CarterCole/cartertech-ai-marketplace"
+        "repo": "CarterCole/example-ai-marketplace"
       }
     }
   },
   "enabledPlugins": {
-    "commit-craft@cartertech": true
+    "commit-craft@example-ai-marketplace": true
   },
   "hooks": {
     "PreToolUse": [

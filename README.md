@@ -1,6 +1,8 @@
-# CarterTech AI Marketplace
+# Example AI Marketplace
 
 One repo of AI agent plugins that installs into **Claude Code**, **GitHub Copilot** (CLI and VS Code), **OpenAI Codex** and **Cursor**. Skills also work in **Gemini CLI**.
+
+**This is a template.** Install it to try the example plugins, or [copy it](#make-your-own-marketplace) to start a marketplace with your own.
 
 Everything is written once, in Claude Code's plugin format:
 
@@ -22,41 +24,43 @@ See [how it works](docs/how-it-works.md).
 
 ## Install
 
+Add the marketplace once, then install any plugin from it with `<plugin>@example-ai-marketplace`.
+
 **Claude Code**
 
 ```
-/plugin marketplace add CarterCole/cartertech-ai-marketplace
-/plugin install commit-craft@cartertech
+/plugin marketplace add CarterCole/example-ai-marketplace
+/plugin install commit-craft@example-ai-marketplace
 ```
 
 **Copilot CLI**
 
 ```bash
-copilot plugin marketplace add CarterCole/cartertech-ai-marketplace
+copilot plugin marketplace add CarterCole/example-ai-marketplace
 ```
 
 ```bash
-copilot plugin install commit-craft@cartertech
+copilot plugin install commit-craft@example-ai-marketplace
 ```
 
-**VS Code**: set `"chat.plugins.enabled": true`, and add `CarterCole/cartertech-ai-marketplace` to `chat.plugins.marketplaces`. Keep the two GitHub defaults, because setting the list replaces them. Then install from the Customizations editor's **Browse** page. See [Copilot](docs/vendors/copilot.md#install-from-this-repo) for details.
+**VS Code**: set `"chat.plugins.enabled": true`, and add `CarterCole/example-ai-marketplace` to `chat.plugins.marketplaces`. Keep the two GitHub defaults, because setting the list replaces them. Then install from the Customizations editor's **Browse** page. See [Copilot](docs/vendors/copilot.md#install-from-this-repo) for details.
 
 **Codex**
 
 ```bash
-codex plugin marketplace add CarterCole/cartertech-ai-marketplace
+codex plugin marketplace add CarterCole/example-ai-marketplace
 ```
 
 ```bash
-codex plugin add commit-craft@cartertech
+codex plugin add commit-craft@example-ai-marketplace
 ```
 
-**Cursor**: `/plugin marketplace add https://github.com/CarterCole/cartertech-ai-marketplace` in the Cursor CLI, or Dashboard → Plugins & MCPs → Import from Repo.
+**Cursor**: `/plugin marketplace add https://github.com/CarterCole/example-ai-marketplace` in the Cursor CLI, or Dashboard → Plugins & MCPs → Import from Repo.
 
 **Gemini CLI** (skills only):
 
 ```bash
-gemini skills install https://github.com/CarterCole/cartertech-ai-marketplace --path plugins/commit-craft/skills/conventional-commits
+gemini skills install https://github.com/CarterCole/example-ai-marketplace --path plugins/commit-craft/skills/conventional-commits
 ```
 
 ## What each tool reads
@@ -87,20 +91,56 @@ docs/                               formats, lookup orders, test results
 scripts/check.mjs                   validates links, manifests, skills and docs
 ```
 
-## Contributing
+## Make your own marketplace
 
-To add a plugin:
+1. **Copy the repo.** On GitHub, click **Use this template**, or:
 
-1. Copy `plugins/changelog-writer`.
-2. Rename it.
-3. List it in `.claude-plugin/marketplace.json`.
-4. Run the check:
+   ```bash
+   gh repo create my-org/my-marketplace --template CarterCole/example-ai-marketplace --public --clone
+   ```
+
+   A plain clone works too; point `origin` at your own repo afterwards:
+
+   ```bash
+   git clone https://github.com/CarterCole/example-ai-marketplace my-marketplace
+   ```
+
+   On Windows, turn on Developer Mode and add `-c core.symlinks=true` to the clone, or the symlinks arrive as text files.
+
+2. **Rename it.** This rewrites the repo URL, the marketplace name (the `@suffix` in install commands) and the owner in every manifest and doc. Pick a marketplace name your users won't already have:
+
+   ```bash
+   node scripts/rename-marketplace.mjs my-org/my-marketplace my-marketplace --owner "My Team" --email team@example.com
+   ```
+
+3. **Swap in your plugins.** Delete the examples you don't need (the plugin folder and its entry in `.claude-plugin/marketplace.json`). Add your own by copying `plugins/changelog-writer`, renaming it and listing it in the marketplace; the [authoring guide](docs/authoring.md) has the rules.
+
+4. **Check and push:**
 
    ```bash
    node scripts/check.mjs
    ```
 
-The [authoring guide](docs/authoring.md) covers the rules, versioning, releases and testing in each tool. All docs are indexed in [docs/](docs/README.md).
+   CI runs the same check on every push. Then send people the install commands above with your repo and marketplace name.
+
+### Tell people how to install it
+
+Paste this to your team, with your repo and plugin names:
+
+```
+Claude Code:  /plugin marketplace add my-org/my-marketplace
+              /plugin install <plugin>@my-marketplace
+Copilot CLI:  copilot plugin marketplace add my-org/my-marketplace
+              copilot plugin install <plugin>@my-marketplace
+Codex:        codex plugin marketplace add my-org/my-marketplace
+              codex plugin add <plugin>@my-marketplace
+Cursor:       /plugin marketplace add https://github.com/my-org/my-marketplace
+VS Code:      add my-org/my-marketplace to chat.plugins.marketplaces
+```
+
+To have a project offer the marketplace automatically, commit a `.claude/settings.json` with `extraKnownMarketplaces` and `enabledPlugins`, like [the project example](examples/project-setup/.claude/settings.json). Claude Code and VS Code read it, and a symlink at `.github/copilot/settings.json` covers Copilot.
+
+All docs are indexed in [docs/](docs/README.md).
 
 ## License
 

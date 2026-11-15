@@ -41,7 +41,7 @@
 | Claude Code | `claude --plugin-dir plugins/<name>` loads it for one session. `claude --plugin-dir plugins/<name> plugin details <name>` lists what loaded. `claude plugin validate --strict plugins/<name>` |
 | Copilot CLI | `COPILOT_HOME=$(mktemp -d) copilot plugin install ./plugins/<name>` keeps your real config clean. `copilot --agent nope -p ok --log-level debug --log-dir <dir>` lists loaded agents without calling a model, and the log says `Loaded N hook(s)` |
 | VS Code | **Chat: Install Plugin from Source** with the local path |
-| Codex | `codex plugin marketplace add ./` then `codex plugin add <name>@cartertech`; review hooks in `/hooks` |
+| Codex | `codex plugin marketplace add ./` then `codex plugin add <name>@example-ai-marketplace`; review hooks in `/hooks` |
 | Cursor | symlink or copy the plugin to `~/.cursor/plugins/local/<name>` and run **Reload Window** |
 | Gemini CLI | `gemini skills link plugins/<name>/skills/<skill>` |
 
