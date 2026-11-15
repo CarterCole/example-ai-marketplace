@@ -36,10 +36,11 @@
 | Tool | Version | What ran | Result |
 |------|---------|----------|--------|
 | Claude Code | 2.1.289 | `claude plugin validate --strict` on the marketplace and every plugin | pass |
-| | | marketplace add + install of every plugin, in a throwaway `CLAUDE_CONFIG_DIR` | pass; `plugin details` lists every component |
+| | | marketplace add + install of every plugin, from a local path and from `CarterCole/example-ai-marketplace` on GitHub, in a throwaway `CLAUDE_CONFIG_DIR` | pass; `plugin details` lists every component |
+| | | GitHub Actions (`.github/workflows/check.yml`) | pass, including `claude plugin validate --strict` on the runner |
 | | | 37 event names through the validator | all 33 Claude events accepted; Codex-only `PreModelRequest`, `PostModelRequest`, `Interrupt` rejected |
 | | | headless session with `kitchen-sink` loaded | `InstructionsLoaded`, `SessionStart`, `UserPromptSubmit`, `StopFailure`, `SessionEnd` fired and were logged; the model call failed on an expired CLI login, so `PreToolUse` and the force-push guard were not reached |
-| Copilot CLI | 1.0.18 | marketplace add from a local path, in a throwaway `COPILOT_HOME` | reads `.claude-plugin/marketplace.json` |
+| Copilot CLI | 1.0.18 | marketplace add from a local path and from GitHub, in a throwaway `COPILOT_HOME` | reads `.claude-plugin/marketplace.json` |
 | | | install every plugin | pass; symlinks turned into real files in the cache |
 | | | agents and hooks loaded (via `--agent` and the debug log) | `commit-craft:diff-reviewer` and its hook load from the plain Claude manifest; kitchen-sink loads 13 Copilot-format hooks; `userPromptTransformed` is not loaded |
 | Hook and MCP scripts | Node 25 | sample payloads for each tool's format; a JSON-RPC session against the MCP server | correct exit codes and output per tool; MCP `initialize`, `tools/list`, `tools/call` and error replies work |
